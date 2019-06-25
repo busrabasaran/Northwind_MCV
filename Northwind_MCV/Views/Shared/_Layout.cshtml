@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/MyStyleSheet1.css" rel="stylesheet" />
+   
+</head>
+<body>
+    @Html.Partial("_Header")
+    <div class="container"> 
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

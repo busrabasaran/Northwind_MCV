@@ -1,0 +1,44 @@
+﻿@model Northwind_MCV.Models.EmloyeesViewModel
+
+@{
+    ViewBag.Title = "EmployeesForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmployeesForm</h2>
+<br />
+@using (Html.BeginForm("EmployeesSave", "Employees", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Employee.FirstName", "First Name")
+        @Html.TextBoxFor(x=>x.Employee.FirstName, new { @class = "form-control" })
+        @Html.Label("Employee.LastName", "Last Name")
+        @Html.TextBoxFor(x=>x.Employee.LastName, new { @class = "form-control" })
+        @Html.Label("Employee.Title", "Title")
+        @Html.TextBoxFor(x=>x.Employee.Title,  new { @class = "form-control" } )
+        @Html.Label("Employee.TitleOfCourtesy", "TitleOfCourtesy")
+        @Html.TextBoxFor(x=>x.Employee.TitleOfCourtesy, new { @class = "form-control" })
+        @Html.Label("Employee.BirthDate", "BirthDate")
+        @Html.TextBoxFor(x=>x.Employee.BirthDate, new { @class = "form-control",type="date"})
+        @Html.Label("Employee.HireDate", "HireDate")
+        @Html.TextBoxFor(x=>x.Employee.HireDate, new { @class = "form-control", type="date"})
+        @Html.Label("Employee.Address", "Address")
+        @Html.TextBoxFor(x=>x.Employee.Address, new { @class = "form-control", type= "textarea" })
+        @Html.Label("Employee.City", "City")
+        @Html.TextBoxFor(x=>x.Employee.City, new { @class = "form-control" })
+        @Html.Label("Employee.Region", "Region")
+        @Html.DropDownList("Employee.Region", new SelectList(Model.Ragion, "RegionDescription", "RegionDescription"), new { @class = "form-control" })
+        @Html.Label("Employee.Country", "Country")
+        @Html.TextBoxFor(x=>x.Employee.Country, new { @class = "form-control" })
+        @Html.Label("Employee.PostalCode", "Postal Code")
+        @Html.TextBoxFor(x=>x.Employee.PostalCode, new { @class = "form-control" })
+        @Html.Label("Employee.HomePhone", "HomePhone")
+        @Html.TextBoxFor(x=>x.Employee.PostalCode, new { @class = "form-control" })
+        @Html.Label("Employee.Notes", "Notes")
+        @Html.TextBoxFor(x=>x.Employee.Notes, new { @class = "form-control" })
+
+    </div>
+    @Html.HiddenFor(x => x.Employee.EmployeeID)
+    <button class="btn btn-success" type="submit">Kaydet</button>
+}
+

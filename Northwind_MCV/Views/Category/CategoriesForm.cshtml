@@ -1,0 +1,24 @@
+﻿@model Northwind_DAL.Category
+@{
+    ViewBag.Title = "CategoriesForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoriesForm</h2>
+<br />
+@using (Html.BeginForm("CategoriesSave", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(x=>x.CategoryName)
+        @Html.TextBoxFor(x=>x.CategoryName, new {@class="form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryName)
+        <br />
+        @Html.LabelFor(x=>x.Description)
+        @Html.TextBoxFor(x=>x.Description,new {@class="form-control"})
+        @Html.ValidationMessageFor(x => x.Description)
+
+    </div>
+        @Html.HiddenFor(x=>x.CategoryID)
+        <button class="btn btn-success" type="submit">Kaydet</button>
+}

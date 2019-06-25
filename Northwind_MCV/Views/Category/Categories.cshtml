@@ -1,0 +1,35 @@
+﻿
+@model List<Northwind_DAL.Category>
+@{ 
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+<br />
+<a class="btn btn-success" href="~/Category/CategoriesSave">Category Add</a>
+<br />
+<table class="table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Descriptions</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Description</td>
+                <td><a class="btn btn-primary" href="~/Category/CategoriesUpdate/@item.CategoryID">Güncelle</a></td>
+                <td><a class="btn btn-warning" href="~/Category/CategoriesDelete/@item.CategoryID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

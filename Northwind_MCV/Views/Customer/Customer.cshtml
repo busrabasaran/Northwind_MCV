@@ -1,0 +1,47 @@
+﻿@model List<Northwind_DAL.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer</h2>
+
+<br />
+<a class="btn btn-success" href="~/Customer/CustomerSave">Customer Add</a>
+<br />
+<table class="table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Company Name</th>
+            <th>ContactName</th>
+            <th>ContactTitle</th>
+            <th>City</th>
+            <th>Region</th>
+            <th>PostalCode</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Fax</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerID</td>
+                <td>@item.CompanyName</td>
+                <td>@item.ContactName</td>
+                <td>@item.ContactTitle</td>
+                <td>@item.City</td>
+                <td>@item.Region</td>
+                <td>@item.PostalCode</td>
+                <td>@item.Country</td>
+                <td>@item.Phone</td>
+                <td>@item.Fax</td>
+                <td><a class="btn btn-primary" href="~/Customer/CustomerUpdate/@item.CustomerID">Güncelle</a></td>
+                <td><a class="btn btn-warning" href="~/Customer/CustomerDelete/@item.CustomerID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

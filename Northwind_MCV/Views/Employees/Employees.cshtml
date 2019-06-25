@@ -1,0 +1,65 @@
+﻿@model List<Northwind_DAL.Employee>
+
+
+@{
+    ViewBag.Title = "Employees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees</h2>
+
+<br />
+<a class="btn btn-success" href="~/Employees/EmployeesSave">Customer Add</a>
+<br />
+<br />
+<table class="table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Title</th>
+            <th>TitleOfCourtesy</th>
+            <th>BirthDate</th>
+            <th>HireDate</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Region</th>
+            <th>PostalCode</th>
+            <th>Country</th>
+            <th>HomePhone</th>
+            <th>Extension</th>
+            <th>Photo</th>
+            <th>Notes</th>
+            <th>ReportsTo</th>
+            <th>PhotoPath</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Title</td>
+                <td>@item.TitleOfCourtesy</td>
+                <td>@item.BirthDate</td>
+                <td>@item.HireDate</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Region</td>
+                <td>@item.PostalCode</td>
+                <td>@item.Country</td>
+                <td>@item.HomePhone</td>
+                <td>@item.Extension</td>
+                <td>@item.Photo</td>
+                <td>@item.Notes</td>
+                <td>@item.ReportsTo</td>
+                <td>@item.PhotoPath</td>
+                <td><a class="btn btn-primary" href="~/Employees/EmployeesUpdate/@item.EmployeeID">Güncelle</a></td>
+                <td><a class="btn btn-warning" href="~/Employees/EmployeesDelete/@item.EmployeeID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
